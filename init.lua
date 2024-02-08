@@ -16,6 +16,10 @@ return {
       --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
     },
   },
+  --Set dashboard header
+  header ={ 
+    "izbor",
+     }, 
 
   -- Set colorscheme to use
   colorscheme = "astrodark",
