@@ -16,13 +16,6 @@ return {
       --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
     },
   },
-  --Set dashboard header
-  header ={ 
-    "izbor",
-     }, 
-
-  -- Set colorscheme to use
-  colorscheme = "astrodark",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -87,3 +80,4 @@ return {
     -- }
   end,
 }
+--https://www.devas.life/effective-neovim-setup-for-web-development-towards-2024/ - японец >nevim 
