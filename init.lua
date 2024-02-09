@@ -18,7 +18,10 @@ return {
   },
 
   -- Set colorscheme to use5
-  colorscheme = "astrodark",
+  -- colorscheme = "catppuccin",
+  -- colorscheme = "sonokai",
+  colorscheme = "tokyonight",
+  -- colorscheme = "kanagawa",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -84,3 +87,6 @@ return {
   end,
 }
 --https://www.devas.life/effective-neovim-setup-for-web-development-towards-2024/ - японец >nevim
+--
+--
+--https://neovimcraft.com/plugin/folke/tokyonight.nvim
