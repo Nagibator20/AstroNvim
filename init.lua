@@ -17,6 +17,9 @@ return {
     },
   },
 
+  -- Set colorscheme to use5
+  colorscheme = "astrodark",
+
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
     virtual_text = true,
@@ -80,4 +83,4 @@ return {
     -- }
   end,
 }
---https://www.devas.life/effective-neovim-setup-for-web-development-towards-2024/ - японец >nevim 
+--https://www.devas.life/effective-neovim-setup-for-web-development-towards-2024/ - японец >nevim
