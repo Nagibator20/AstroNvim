@@ -3,18 +3,19 @@
 -- Please use this mappings table to set keyboard mapping since this is the
 -- lower level configuration and more robust one. (which-key will
 -- automatically pick-up stored data by this setting.)
-
 local function map(mode, rhs, lhs, opts)
   local options = { noremap = true }
   if opts then options = vim.tbl_extend("force", options, opts) end
   vim.api.nvim_set_keymap(mode, rhs, lhs, options)
 end
 
+vim.o.timeoutlen = 1000 -- таймер вывода меню
+
 return {
   -- Режимы----------------------------------
   -- first key is the mode
-  -- Определите функцию map для создания отображений с опцией noremap = true по умолчанию
 
+  -- Для нормального режима
   n = {
     -- second key is the lefthand side of the map
 
@@ -42,11 +43,11 @@ return {
     map("n", "й", "q"),
     map("n", "к", "r"),
     map("n", "л", "k"),
-    map("n", "м", ":MenuV<cr>"),
+    map("n", "м", "i"),
     map("n", "м", "v"),
     map("n", "н", "y"),
     map("n", "о", "j"),
-    map("n", "п", ":MenuG<cr>"),
+    map("n", "п", "g"),
     map("n", "р", "h"),
     map("n", "с", "c"),
     map("n", "т", "n"),
@@ -64,6 +65,8 @@ return {
     map("n", "ю", "."),
     map("n", "я", "z"),
     map("n", ".", "/"),
+    map("n", "Ё", "~"),
+    ["вв"] = ":delete<CR>",
     -- mappings seen unjer group name "Buffer"
     ["<leader>bD"] = {
       function()
@@ -79,44 +82,27 @@ return {
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
+
+  -- Для терминала
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
-  i = {},
-  v = {
-    map("v", "а", "f"),
-    map("v", "б", ","),
-    map("v", "в", "d"),
-    map("v", "г", "u"),
-    map("v", "д", "l"),
-    map("v", "е", "t"),
-    map("v", "ж", ";"),
-    map("v", "з", "p"),
-    map("v", "и", "b"),
-    map("v", "й", "q"),
-    map("v", "к", "r"),
-    map("v", "л", "k"),
-    map("v", "м", "v"),
-    map("v", "н", "y"),
-    map("v", "о", "j"),
-    map("v", "п", "g"),
-    map("v", "р", "h"),
-    map("v", "с", "c"),
-    map("v", "т", "n"),
-    map("v", "у", "e"),
-    map("v", "ф", "a"),
-    map("v", "х", "["),
-    map("v", "ц", "w"),
-    map("v", "ч", "x"),
-    map("v", "ш", "i"),
-    map("v", "щ", "o"),
-    map("v", "ъ", "]"),
-    map("v", "ы", "s"),
-    map("v", "ь", "m"),
-    map("v", "э", '"'),
-    map("v", "ю", "."),
-    map("v", "я", "z"),
-    map("v", ".", "/"),
+
+  -- Для режима вставки
+  i = {
+    -- работает херово
+    -- ["оо"] = "<Esc>",
+    -- ["вв"] = "<Esc>:delete<CR>",
+    -- vim.api.nvim_set_keymap("i", "оо", "<Esc>", { noremap = true }), -- дублирует поведение jj
+
+    -- работает нормально
+    vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>a", { noremap = true, silent = true }), -- сохраняет и возвращается в режим вставки при нажатии ctr+s
+    vim.api.nvim_set_keymap("i", "<Esc>", "<Esc>:w<CR>", { noremap = true, silent = true }), -- выходит в нормальный режим и сохраняет
   },
+
+  -- Для режима выделения
+  v = {},
+  -- Для режима (ожидающего) оператора
+  o = {},
 }
