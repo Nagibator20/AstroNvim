@@ -2,7 +2,7 @@ Installed
     ✓ cssmodules-language-server cssmodules_ls
     ✓ eslint_d
     ✓ html-lsp html
-    ✓ htmlhint
+    ✓ htmlhint - нет р -----------------
     ✓ lua-language-server lua_ls
     ✓ prettier
     ✓ prettierd
@@ -12,3 +12,20 @@ Installed
     ✓ typescript-language-server tsserver
 
     !!! Для подсветки синтаксиса нужно установить языковые серверы - TSInstall <язык программирования>
+    :LspInstall - для ручной установки
+
+
+Installed
+    ✓ cssmodules-language-server cssmodules_ls
+    ✓ eslint-lsp eslint -нет д ------------------------
+    ✓ eslint_d
+    ✓ html-lsp html
+    ✓ lua-language-server lua_ls
+    ✓ prettier
+    ✓ prettierd
+    ✓ stylelint
+    ✓ stylelint-lsp stylelint_lsp - нет д ------------
+    ✓ stylua
+    ✓ tailwindcss-language-server tailwindcss
+    ✓ typescript-language-server tsserver
+
