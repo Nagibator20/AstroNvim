@@ -6,45 +6,7 @@ return {
   --   opts = {},
   --   config = function()
   --     require("lualine").setup {
-  --       options = {
-  --         icons_enabled = true,
-  --         theme = "auto",
-  --         component_separators = { left = "", right = "" },
-  --         section_separators = { left = "", right = "" },
-  --         disabled_filetypes = {
-  --           statusline = {},
-  --           winbar = {},
-  --         },
-  --         ignore_focus = {},
-  --         always_divide_middle = true,
-  --         globalstatus = false,
-  --         refresh = {
-  --           statusline = 1000,
-  --           tabline = 1000,
-  --           winbar = 1000,
-  --         },
-  --       },
-  --       sections = {
-  --         lualine_a = { "mode" },
-  --         lualine_b = { "branch", "diff", "diagnostics" },
-  --         lualine_c = { "filename" },
-  --         lualine_x = { "encoding", "fileformat", "filetype" },
-  --         lualine_y = { "progress" },
-  --         lualine_z = { "location" },
-  --       },
-  --       inactive_sections = {
-  --         lualine_a = {},
-  --         lualine_b = {},
-  --         lualine_c = { "filename" },
-  --         lualine_x = { "location" },
-  --         lualine_y = {},
-  --         lualine_z = {},
-  --       },
-  --       tabline = {},
-  --       winbar = {},
-  --       inactive_winbar = {},
-  --       extensions = {},
-  --     }
+  --       options = {  }
   --   end,
   -- },
   {
@@ -54,7 +16,23 @@ return {
     event = "VeryLazy",
     opts = function(_, opts)
       local status = require "astronvim.utils.status"
-
+      local Ruler = {
+        provider = "%7(%l/%3L%):%2c %P",
+      }
+      local ScrollBar = {
+        static = {
+          sbar = { "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" },
+          -- Another variant, because the more choice the better.
+          -- sbar = { '🭶', '🭷', '🭸', '🭹', '🭺', '🭻' }
+        },
+        provider = function(self)
+          local curr_line = vim.api.nvim_win_get_cursor(0)[1]
+          local lines = vim.api.nvim_buf_line_count(0)
+          local i = math.floor((curr_line - 1) / lines * #self.sbar) + 1
+          return string.rep(self.sbar[i], 2)
+        end,
+        hl = { fg = "blue", bg = "bright_bg" },
+      }
       opts.statusline = { -- statusline
         hl = { fg = "fg", bg = "bg" },
         status.component.mode { mode_text = { padding = { left = 1, right = 1 } } },
@@ -71,7 +49,9 @@ return {
         status.component.fill(),
         status.component.lsp(),
         status.component.treesitter(),
-        status.component.nav(),
+        -- Ruler,
+        -- ScrollBar,
+        status.component.nav(Ruler),
         -- status.component.mode { surround = { separator = "right" } },
       }
       return opts
