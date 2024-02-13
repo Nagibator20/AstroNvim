@@ -118,42 +118,14 @@ return {
     event = "VeryLazy",
     main = "rainbow-delimiters.setup",
   },
+
   -- Показывеет скорость загрузки плагинов (:scriotnames - какие загружены)
   { "dstein64/vim-startuptime" },
-  --Попытка подключить inline hint--------------------------------------
+  -- Подсказки как в vscode
   -- {
-  --   "lvimuser/lsp-inlayhints.nvim",
-  --   name = "lsp-inlayhints",
-  --   config = function()
-  --     require("lsp-inlayhints").setup {
-  --       settings = {
-  --         typescript = {
-  --           inlayHints = {
-  --             includeInlayParameterNameHints = "all",
-  --             includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-  --             includeInlayFunctionParameterTypeHints = true,
-  --             includeInlayVariableTypeHints = true,
-  --             includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-  --             includeInlayPropertyDeclarationTypeHints = true,
-  --             includeInlayFunctionLikeReturnTypeHints = true,
-  --             includeInlayEnumMemberValueHints = true,
-  --           },
-  --         },
-  --         javascript = {
-  --           inlayHints = {
-  --             includeInlayParameterNameHints = "all",
-  --             includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-  --             includeInlayFunctionParameterTypeHints = true,
-  --             includeInlayVariableTypeHints = true,
-  --             includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-  --             includeInlayPropertyDeclarationTypeHints = true,
-  --             includeInlayFunctionLikeReturnTypeHints = true,
-  --             includeInlayEnumMemberValueHints = true,
-  --           },
-  --         },
-  --       },
-  --     }
-  --   end,
+  --   "ray-x/lsp_signature.nvim",
+  --   event = "VeryLazy",
+  --   opts = {},
+  --   config = function(_, opts) require("lsp_signature").setup(opts) end,
   -- },
 }
---

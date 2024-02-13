@@ -27,6 +27,7 @@ return {
   -- colorscheme = "solarized-osaka",
   colorscheme = "tokyonight",
   -- --------------------------------------------------------------
+
   lsp = {
     -- customize lsp formatting options
     formatting = {

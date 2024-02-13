@@ -1,14 +1,4 @@
 return {
-  -- {
-  --   "nvim-lualine/lualine.nvim",
-  --   name = "lualine",
-  --   event = "VeryLazy",
-  --   opts = {},
-  --   config = function()
-  --     require("lualine").setup {
-  --       options = {  }
-  --   end,
-  -- },
   {
     "rebelot/heirline.nvim",
     name = "heirline",
@@ -16,12 +6,13 @@ return {
     event = "VeryLazy",
     opts = function(_, opts)
       local status = require "astronvim.utils.status"
+
       local Ruler = {
         provider = "%7(%l/%3L%):%2c %P",
       }
       local ScrollBar = {
         static = {
-          sbar = { "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" },
+          sbar = { "█", "▇", "▆", "▅", "▄", "▃", "▂", "▁" },
           -- Another variant, because the more choice the better.
           -- sbar = { '🭶', '🭷', '🭸', '🭹', '🭺', '🭻' }
         },
@@ -51,8 +42,18 @@ return {
         status.component.treesitter(),
         -- Ruler,
         -- ScrollBar,
-        status.component.nav(Ruler),
+        -- status.component.nav(Ruler),
         -- status.component.mode { surround = { separator = "right" } },
+        {
+          provider = function()
+            local curr_line = vim.api.nvim_win_get_cursor(0)[1]
+            local total_lines = vim.api.nvim_buf_line_count(0)
+            -- local column = vim.api.nvim_buf_li
+            local percent = math.floor(curr_line / total_lines * 100)
+            return string.format("(%d/%d) %d%%", curr_line, total_lines, percent)
+          end,
+          -- hl = { fg = "blue", bg = "#FFFFFF" },
+        },
       }
       return opts
     end,
