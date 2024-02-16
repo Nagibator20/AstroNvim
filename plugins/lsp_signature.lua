@@ -11,8 +11,8 @@ return {
 
       lsp_signature.setup {
         doc_lines = 10,
-        max_height = 300,
-        max_width = 800, -- the value need >= 40
+        max_height = 10,
+        max_width = 40, -- the value need >= 40
         padding = "", -- Разделитель
         wrap = true,
         floating_window = true,
