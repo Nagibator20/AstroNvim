@@ -10,7 +10,7 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.colorscheme.nightfox-nvim", enabled = false },
   { import = "astrocommunity.colorscheme.kanagawa-nvim", enabled = false },
-  { import = "astrocommunity.colorscheme.tokyonight-nvim", enabled = false},
+  { import = "astrocommunity.colorscheme.tokyonight-nvim", enabled = false },
   { import = "astrocommunity.colorscheme.catppuccin", enabled = false },
   -- { -- further customize the options set by the community
   --   "catppuccin",

@@ -52,7 +52,7 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "pyright"
+      -- "pyright",
     },
   },
 
@@ -89,6 +89,4 @@ return {
   end,
 }
 --https://www.devas.life/effective-neovim-setup-for-web-development-towards-2024/ - японец >nevim
---
---
 --https://neovimcraft.com/plugin/folke/tokyonight.nvim
