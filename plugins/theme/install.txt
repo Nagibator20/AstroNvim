@@ -1,0 +1,2 @@
+Вставить в init.lua: colorscheme = 'название темы' 
+В user.lua подключить: { require "user.plugins.theme.название темы" },

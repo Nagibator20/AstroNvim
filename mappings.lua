@@ -20,17 +20,19 @@ return {
     -- second key is the lefthand side of the map
 
     -- navigate buffer tabs with `H` and `L`
-    -- L = {
-    --   function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-    --   desc = "Next buffer",
-    -- },
-    -- H = {
-    --   function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-    --   desc = "Previous buffer",
-    -- },
+    L = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    H = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },
+
+    -- https://github.com/neovim/nvim-lspconfig
+    vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, {}),
 
     -- Добавление нового отображения
-
     map("n", "а", "f"),
     map("n", "б", ","),
     map("n", "в", "d"),
@@ -67,6 +69,7 @@ return {
     map("n", ".", "/"),
     map("n", "Ё", "~"),
     ["вв"] = ":delete<CR>",
+
     -- mappings seen unjer group name "Buffer"
     ["<leader>bD"] = {
       function()

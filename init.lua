@@ -18,16 +18,20 @@ return {
     },
   },
 
+  --https://www.devas.life/effective-neovim-setup-for-web-development-towards-2024/ - японец >nevim
+
   -- Set colorscheme to use Comunity
   -- colorscheme = "catppuccin",
-  -- colorscheme = "sonokai",
-  -- colorscheme = "kanagawa",
 
   -- Set colorscheme to use User
-  -- colorscheme = "solarized-osaka",
-  colorscheme = "tokyonight",
+  colorscheme = "solarized-osaka",
+  -- colorscheme = "tokyonight",
+  -- colorscheme = "kanagawa",
   -- --------------------------------------------------------------
+  -- Настройка для отключения запросов о своп-файлах
+  vim.cmd [[set noswapfile]],
 
+  -- -----------------------------------------------------------------
   lsp = {
     -- customize lsp formatting options
     formatting = {
@@ -67,9 +71,6 @@ return {
     },
   },
 
-  -- Настройка для отключения запросов о своп-файлах
-  vim.cmd [[set noswapfile]],
-
   -- This function is run last and is a good place to configuring
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
@@ -88,5 +89,3 @@ return {
     -- }
   end,
 }
---https://www.devas.life/effective-neovim-setup-for-web-development-towards-2024/ - японец >nevim
---https://neovimcraft.com/plugin/folke/tokyonight.nvim
