@@ -30,11 +30,41 @@ return {
     -- same as `override` but specifically for overrides by filename
     -- takes effect when `strict` is true
     override_by_filename = {
-      -- [".gitignore"] = {
-      --   icon = "",
-      --   color = "#f1502f",
-      --   name = "Gitignore",
-      -- },
+      [".gitignore"] = {
+        icon = "󰊢",
+        color = "#f1502f",
+        name = "Gitignore",
+      },
+      [".prettierrc.json"] = {
+        icon = "",
+        color = "#f1502f",
+        name = "Prettier",
+      },
+      [".prettierignore"] = {
+        icon = "",
+        color = "#f1502f",
+        name = "Prettier",
+      },
+      [".eslintrc.cjs"] = {
+        icon = "󰱺",
+        color = "#f1502f",
+        name = "EsLint",
+      },
+      [".stylelintrc.json"] = {
+        icon = "",
+        color = "#f1502f",
+        name = "StyleLint",
+      },
+      [".stylelintignore"] = {
+        icon = "",
+        color = "#f1502f",
+        name = "StyleLin",
+      },
+      ["webpack.config.mjs"] = {
+        icon = "󰜫",
+        color = "#00CED1",
+        name = "Webpack",
+      },
     },
     -- same as `override` but specifically for overrides by extension
     -- takes effect when `strict` is true

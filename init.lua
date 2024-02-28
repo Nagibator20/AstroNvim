@@ -27,11 +27,13 @@ return {
   colorscheme = "solarized-osaka",
   -- colorscheme = "tokyonight",
   -- colorscheme = "kanagawa",
+
   -- --------------------------------------------------------------
   -- Настройка для отключения запросов о своп-файлах
   vim.cmd [[set noswapfile]],
 
-  -- -----------------------------------------------------------------
+  -- --------------------------------------------------------------
+  -- --------------------------------------------------------------
   lsp = {
     -- customize lsp formatting options
     formatting = {
@@ -69,6 +71,14 @@ return {
         disabled_plugins = { "tohtml", "gzip", "matchit", "zipPlugin", "netrwPlugin", "tarPlugin" },
       },
     },
+  },
+
+  -- Комментарии для react typescript
+  {
+    "numToStr/Comment.vim",
+    opts = function()
+      return { pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook() }
+    end,
   },
 
   -- This function is run last and is a good place to configuring

@@ -4,14 +4,15 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     -- overrides `require("mason-lspconfig").setup(...)`
+
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
         "cssmodules_ls",
-        "eslint",
+        "eslint", -- Пока закомментировал (проверяю работу tsserver, почти всегда дублинуют дуруг друга)
         "html",
         "lua_ls",
-        "stylelint_lsp",
+        -- "stylelint_lsp", -- это stylelintplust (отображается в ошибках)
         "tailwindcss",
         "tsserver",
       })
@@ -27,7 +28,7 @@ return {
         "prettier",
         "prettierd",
         "stylua",
-        "eslint_d",
+        -- "eslint_d",
         "htmlhint",
         "stylelint",
       })

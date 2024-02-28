@@ -1,0 +1,41 @@
+{
+  "Print Const": {
+    "prefix": "c",
+    "body": ["const ${1:name} = ${0:value}"],
+    "description": "const name = value"
+  },
+  "Print Let": {
+    "prefix": "l",
+    "body": ["let ${1:name} = ${0:value}"],
+    "description": "let name = value"
+  },
+  "Console Log": {
+    "prefix": "col",
+    "body": ["console.log(${0:value})"],
+    "description": "Prints a console.log"
+  },
+  "Console dir": {
+    "prefix": "cod",
+    "body": ["console.dir(${0:value})"],
+    "description": "Prints a console.dir"
+  },
+  "This": {
+    "prefix": "ths",
+    "body": ["const ${1:propertyName} = this.${0:property}"],
+    "description": "Creates using 'this'"
+  },
+  "Function Declaration": {
+    "prefix": "fu",
+    "body": [
+      "function ${1:functionName}(${2:params}) {",
+      "\t${0:// code here}",
+      "}"
+    ],
+    "description": "Creates a function declaration"
+  },
+  "Arrow Function": {
+    "prefix": "af",
+    "body": ["(${1:params}) => {${0:/*code here*/}}"],
+    "description": "Creates an arrow function"
+  }
+}

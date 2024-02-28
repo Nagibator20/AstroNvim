@@ -3,4 +3,11 @@ return {
   tag = "0.1.5",
   -- or                              , branch = '0.1.x',
   dependencies = { "nvim-lua/plenary.nvim" },
+  require("telescope").setup {
+    defaults = {
+      file_ignore_patterns = {
+        "node_modules",
+      },
+    },
+  },
 }
