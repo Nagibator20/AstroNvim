@@ -79,6 +79,11 @@ return {
         color = "yellow",
         name = "JavaScript",
       },
+      ["pug"] = {
+        icon = "",
+        color = "red",
+        name = "pug",
+      },
     },
   },
 }
