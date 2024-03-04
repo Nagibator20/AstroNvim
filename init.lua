@@ -18,7 +18,7 @@ return {
     },
   },
 
-  --https://www.devas.life/effective-neovim-setup-for-web-development-towards-2024/ - японец >nevim
+  --https://www.devas.life/effective-neovim-setup-for-web-development-towards-2024/ - японец >neovim
 
   -- Set colorscheme to use Comunity
   -- colorscheme = "catppuccin",
@@ -31,7 +31,6 @@ return {
   -- --------------------------------------------------------------
   -- Настройка для отключения запросов о своп-файлах
   vim.cmd [[set noswapfile]],
-
   -- --------------------------------------------------------------
   -- --------------------------------------------------------------
   lsp = {

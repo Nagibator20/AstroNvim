@@ -9,7 +9,7 @@ return {
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
         "cssmodules_ls",
-        "eslint", -- Пока закомментировал (проверяю работу tsserver, почти всегда дублинуют дуруг друга)
+        "eslint", -- Пока за комментировал (проверяю работу tsserver, почти всегда дублируют друг друга)
         "html",
         "lua_ls",
         -- "stylelint_lsp", -- это stylelintplust (отображается в ошибках)

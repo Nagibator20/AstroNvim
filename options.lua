@@ -25,12 +25,12 @@ return function(local_vim)
   local_vim.opt.wrap = true
   local_vim.opt.spell = true
   local_vim.opt.spelllang = "en,ru"
-  -- local_vim.g.syntax = "on" -- не работает
   local_vim.opt.spelloptions = "camel"
+  --local_vim.opt.syntax_enable = true
   local_vim.opt.whichwrap = vim.opt.whichwrap - { "b", "s" } -- removing option from list
   local_vim.opt.shortmess = vim.opt.shortmess + { I = true } -- add to option list
 
   local_vim.g.mapleader = " "
   return local_vim
 end
--- привет catDog привет Пока
+-- привет catDog приветПока
